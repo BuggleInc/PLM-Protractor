@@ -1,4 +1,4 @@
-describe('Exo1', function() {
+describe('Exo11', function() {
     
     var until = protractor.ExpectedConditions;
     var title = element(by.css('.title'));
@@ -10,7 +10,7 @@ describe('Exo1', function() {
     var congratsCross = element.all(by.css('.close-reveal-modal')).get(2);
     
     beforeEach(function() {
-        browser.get('https://plm.telecomnancy.univ-lorraine.fr/#/ui/lessons/welcome/');
+        browser.get('https://plm.telecomnancy.univ-lorraine.fr/#/ui/lessons/welcome/welcome.lessons.welcome.bdr.BDR2');
         browser.ignoreSynchronization=true;
         browser.wait(until.visibilityOf(cross), 5000, "Pop-up isn't here");
         browser.actions().click(cross).perform();
@@ -29,7 +29,7 @@ describe('Exo1', function() {
     });
     
     it('should congrats the user for passing the exercise', function() {
-        browser.executeScript("window.editor.setValue(\"avance();\"); ");
+        browser.executeScript("window.editor.setValue(\"boolean moreMusic = true;while (moreMusic) {char read = getIndication();switch (read) {case 'R': right(); forward(); break;case 'L': left();  forward(); break;case 'I': back();  forward(); break;case 'A': forward(1); break;case 'B': forward(2); break;case 'C': forward(3); break;case 'D': forward(4); break;case 'E': forward(5); break;case 'F': forward(6); break;case 'Z': backward(1); break;case 'Y': backward(2); break;case 'X': backward(3); break;case 'W': backward(4); break;case 'V': backward(5); break;case 'U': backward(6); break;default: moreMusic = false;}}\"); ");
         browser.wait(until.visibilityOf(button), 500, "Button unclickable");
         button.click();
         browser.wait(until.visibilityOf(congratsW), 5000, "Congrats pop-up isn't here");

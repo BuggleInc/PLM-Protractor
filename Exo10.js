@@ -1,4 +1,4 @@
-describe('Exo1', function() {
+describe('Exo10', function() {
     
     var until = protractor.ExpectedConditions;
     var title = element(by.css('.title'));
@@ -10,7 +10,7 @@ describe('Exo1', function() {
     var congratsCross = element.all(by.css('.close-reveal-modal')).get(2);
     
     beforeEach(function() {
-        browser.get('https://plm.telecomnancy.univ-lorraine.fr/#/ui/lessons/welcome/');
+        browser.get('https://plm.telecomnancy.univ-lorraine.fr/#/ui/lessons/welcome/welcome.lessons.welcome.bdr.BDR');
         browser.ignoreSynchronization=true;
         browser.wait(until.visibilityOf(cross), 5000, "Pop-up isn't here");
         browser.actions().click(cross).perform();
@@ -29,7 +29,7 @@ describe('Exo1', function() {
     });
     
     it('should congrats the user for passing the exercise', function() {
-        browser.executeScript("window.editor.setValue(\"avance();\"); ");
+        browser.executeScript("window.editor.setValue(\"while (true) {char c = getIndication();if (c == 'R') {right(); forward();} else if (c == 'L') {left(); forward();} else if (c == 'I') {back(); forward();} else if (c == 'A')forward();else if (c == 'B')forward(2);else if (c == 'C')forward(3);else if (c == 'Z')backward();else if (c == 'Y')backward(2);else if (c == 'X')backward(3);else return ;}\"); ");
         browser.wait(until.visibilityOf(button), 500, "Button unclickable");
         button.click();
         browser.wait(until.visibilityOf(congratsW), 5000, "Congrats pop-up isn't here");
