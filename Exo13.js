@@ -1,4 +1,4 @@
-describe('Exo5', function() {
+describe('Exo13', function() {
     
     var until = protractor.ExpectedConditions;
     var cross = element(by.css('.close-reveal-modal[ng-click]'));
@@ -8,7 +8,7 @@ describe('Exo5', function() {
     var congratsTitle = element(by.css('#successModal h2 span'));
     
     beforeEach(function() {
-        browser.get('https://plm.telecomnancy.univ-lorraine.fr/#/ui/lessons/welcome/welcome.lessons.welcome.loopwhile.LoopWhile');
+        browser.get('https://plm.telecomnancy.univ-lorraine.fr/#/ui/lessons/welcome/welcome.lessons.welcome.loopfor.LoopStairs');
         browser.ignoreSynchronization=true;
         browser.wait(until.visibilityOf(cross), 5000, "Pop-up isn't here");
         browser.actions().click(cross).perform();
@@ -27,7 +27,7 @@ describe('Exo5', function() {
     });
     
     it('should congrats the user for passing the exercise', function() {
-        browser.executeScript("window.editor.setValue(\"while (!isFacingWall()) forward();\"); ");
+        browser.executeScript("window.editor.setValue(\"public void run() {forward();forward();forward();left();for (int i = 0; i<8;i++) { forward();right();forward();left();}right();forward();forward();forward();}\"); ");
         browser.wait(until.visibilityOf(button), 500, "Button unclickable");
         button.click();
         browser.wait(until.visibilityOf(congratsW), 5000, "Congrats pop-up isn't here");

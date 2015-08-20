@@ -1,13 +1,11 @@
 describe('Exo1', function() {
     
     var until = protractor.ExpectedConditions;
-    var title = element(by.css('.title'));
     var cross = element(by.css('.close-reveal-modal[ng-click]'));
     var button = element(by.css('.button-with-icon'));
     var redButton = element(by.css('.button-with-icon.alert'));
     var congratsW = element(by.css('#successModal[style]'));
     var congratsTitle = element(by.css('#successModal h2 span'));
-    var congratsCross = element.all(by.css('.close-reveal-modal')).get(2);
     
     beforeEach(function() {
         browser.get('https://plm.telecomnancy.univ-lorraine.fr/#/ui/lessons/welcome/');
